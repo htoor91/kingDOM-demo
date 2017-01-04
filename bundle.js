@@ -369,7 +369,7 @@
 	  }
 	
 	  step() {
-	    
+	
 	    if (this.board.snake.segments.length > 0) {
 	      this.board.snake.move();
 	      this.render();
@@ -387,7 +387,7 @@
 	  37: "W"
 	};
 	
-	View.STEP_MILLIS = 250;
+	View.STEP_MILLIS = 65;
 	
 	module.exports = View;
 
