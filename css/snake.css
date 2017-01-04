@@ -49,7 +49,8 @@ li {
 }
 
 .snake {
-  background: #brown;
+  background: #51BD72;
+  border-radius: 5px;
 }
 
 .head {
