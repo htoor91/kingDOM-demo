@@ -61,7 +61,7 @@
 	function $d(selector) {
 	  if (typeof selector === 'string') {
 	    return getNodesFromDOM(selector);
-	  } else if (selector instanceof HTMLElement) {
+	  } else if (selector instanceof HTMLElement || selector === window) {
 	    return new DOMNodeCollection([selector]);
 	  } else if (typeof selector === 'function') {
 	    return documentReadyCallback(selector);
@@ -126,6 +126,8 @@
 	    functionQueue.push(fn);
 	  }
 	}
+	
+	module.exports = $d;
 
 
 /***/ },
@@ -201,12 +203,9 @@
 	  }
 	
 	  removeClass(className) {
-	    const classNames = className.split(' ');
 	
 	    this.each((node) => {
-	      classNames.forEach((name) => {
-	        node.classList.remove(name);
-	      });
+	      node.classList.remove(className);
 	    });
 	
 	    return this.nodes;
@@ -246,6 +245,10 @@
 	    this.each((node) => {
 	      node.remove();
 	    });
+	  }
+	
+	  eq(idx) {
+	    return new DOMNodeCollection([this.nodes[idx]]);
 	  }
 	
 	  on(action, cb) {

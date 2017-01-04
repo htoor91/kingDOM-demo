@@ -67,12 +67,9 @@ class DOMNodeCollection {
   }
 
   removeClass(className) {
-    const classNames = className.split(' ');
 
     this.each((node) => {
-      classNames.forEach((name) => {
-        node.classList.remove(name);
-      });
+      node.classList.remove(className);
     });
 
     return this.nodes;
@@ -112,6 +109,10 @@ class DOMNodeCollection {
     this.each((node) => {
       node.remove();
     });
+  }
+
+  eq(idx) {
+    return new DOMNodeCollection([this.nodes[idx]]);
   }
 
   on(action, cb) {
