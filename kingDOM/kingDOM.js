@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function $d(selector) {
   if (typeof selector === 'string') {
     return getNodesFromDOM(selector);
-  } else if (selector instanceof HTMLElement) {
+  } else if (selector instanceof HTMLElement || selector === window) {
     return new DOMNodeCollection([selector]);
   } else if (typeof selector === 'function') {
     return documentReadyCallback(selector);
@@ -80,3 +80,5 @@ function documentReadyCallback(fn) {
     functionQueue.push(fn);
   }
 }
+
+module.exports = $d;
