@@ -85,7 +85,6 @@ class View {
       this.board.snake.move();
       this.render();
     } else {
-      alert("You lost!");
       window.clearInterval(this.intervalId);
     }
   }

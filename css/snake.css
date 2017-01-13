@@ -57,6 +57,31 @@ li {
   border-radius: 10px;
 }
 
+.hide{
+  display: none;
+}
+
+.start{
+  color: black;
+  height: 40px;
+  width: 100px;
+  font-size: 22px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background: #ccc;
+  text-align: center;
+  margin: 0 auto;
+  outline: none;
+}
+
+.start:hover {
+  cursor: pointer;
+  background-color: #aaa;
+}
+
+
+
 .north {
   background: url('../images/head-north.png') no-repeat;
   background-size: contain;

@@ -3,5 +3,9 @@ const View = require('./snake-view');
 
 $d(() => {
   const rootEl = $d('.grid');
-  new View(rootEl);
+  $d(".start").on("click", () => {
+    $d(".grid").removeClass("hide");
+    $d(".score").html("0");
+    new View(rootEl);
+  });
 });

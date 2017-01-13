@@ -49,7 +49,11 @@
 	
 	$d(() => {
 	  const rootEl = $d('.grid');
-	  new View(rootEl);
+	  $d(".start").on("click", () => {
+	    $d(".grid").removeClass("hide");
+	    $d(".score").html("0");
+	    new View(rootEl);
+	  });
 	});
 
 
@@ -374,7 +378,6 @@
 	      this.board.snake.move();
 	      this.render();
 	    } else {
-	      alert("You lost!");
 	      window.clearInterval(this.intervalId);
 	    }
 	  }
